@@ -907,6 +907,10 @@ function showHomeVideo() {
   let video = document.getElementById('home-menu-video');
 
   if (!video) return;
+  if (!aaLoader.isProd()) {
+    video.remove();
+    return;
+  }
 
   const canPlay = /maybe|probably/gi;
 

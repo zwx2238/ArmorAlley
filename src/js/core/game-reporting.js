@@ -506,6 +506,7 @@ function getEnemyChoppersLost() {
 }
 
 function postToService(service, options = {}) {
+  if (!window.location.hostname.match(/(^|\.)armor-alley\.net$/i)) return;
   fetch('/events/hook/', {
     method: 'POST',
     headers: {

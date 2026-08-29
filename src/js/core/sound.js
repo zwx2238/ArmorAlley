@@ -38,17 +38,16 @@ if (soundManager.canPlayMIME('audio/opus')) {
 }
 
 /**
- * Dev / localhost / 192.168.x.x / 10.10.x.x default: load .WAV audio assets.
+ * Source/self-hosted builds load the tracked .WAV audio assets.
  * ?audiosprite=1 to override.
  */
 if (
   !aaLoader.isProd() &&
   !aaLoader.isFloppy &&
   soundManager.canPlayMIME('audio/wav') &&
-  window.location.hostname.match(/localhost|192\.168\.|10\.10\./i) &&
   !window.location.search.match(/audiosprite/i)
 ) {
-  console.info('Special case: using .wav on localhost/dev');
+  console.info('Using tracked .wav audio for the source build');
   chosenCodec = 'wav';
 }
 

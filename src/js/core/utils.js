@@ -657,6 +657,8 @@ const utils = {
      * Also, TBD: Optional Webhooks for posting games to Slack and Discord.
      */
 
+    if (!window.location.hostname.match(/(^|\.)armor-alley\.net$/i)) return;
+
     // drop false-y values from { key: value }
     if (!rawValues) {
       info = filter(info);
