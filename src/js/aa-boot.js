@@ -21,7 +21,7 @@ function complete() {
     if (window.initArmorAlley) {
       // go go go!
       window.initArmorAlley();
-      window.setTimeout(aaLoader.loadGA, 2500);
+      aaLoader.loadGA();
     } else {
       console.warn('AA-boot: WTF no window.initArmorAlley()?');
     }

@@ -439,25 +439,7 @@ function unloadCSS(src) {
 }
 
 function loadGA() {
-  // google analytics, only for armor-alley.net.
-  if (!wl.host.match(/armor-alley\.net/i)) return;
-  if (sp.get('noga')) return;
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'G-XGW2TDDC6V');
-  window.gtag = gtag;
-  let type = '',
-    onload = null,
-    async = true;
-  addScript(
-    'https://www.googletagmanager.com/gtag/js?id=G-XGW2TDDC6V',
-    onload,
-    type,
-    async
-  );
+  // Keep the loader API without analytics side effects.
 }
 
 const aaLoader = {
